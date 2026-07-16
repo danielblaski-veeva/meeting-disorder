@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Disorder - 2.5D Retro Hack-and-Slash</title>
+  <!-- Modern Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Main Header -->
+    <header class="game-header">
+      <div class="logo">
+        <span class="logo-red">MEETING</span><span class="logo-white">DISORDER</span>
+      </div>
+      <div class="subtitle">Company Hackathon • Team Alpha</div>
+    </header>
+
+    <!-- Game Console Frame -->
+    <main class="console-frame">
+      <div class="bezel-inner">
+        <!-- Canvas Game Container -->
+        <div class="canvas-wrapper">
+          <canvas id="gameCanvas" width="960" height="540"></canvas>
+          
+          <!-- UI Overlay (Dynamic Menus) -->
+          <div id="uiOverlay" class="ui-overlay">
+            <!-- Content will be injected dynamically by TypeScript UI -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Control Instructions Overlay -->
+    <footer class="controls-panel">
+      <div class="panel-section">
+        <h3><span class="icon">⌨️</span> Keyboard Controls</h3>
+        <div class="control-grid">
+          <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or <kbd>▲</kbd><kbd>◀</kbd><kbd>▼</kbd><kbd>▶</kbd> <span>Move</span></div>
+          <div><kbd>J</kbd> <span>Attack / Combo</span></div>
+          <div><kbd>K</kbd> <span>Jump</span></div>
+          <div><kbd>L</kbd> <span>Special Ability</span></div>
+        </div>
+      </div>
+      <div class="panel-divider"></div>
+      <div class="panel-section">
+        <h3><span class="icon">🎮</span> Gamepad Controller</h3>
+        <div class="control-grid">
+          <div><kbd>D-Pad</kbd> or <kbd>Left Stick</kbd> <span>Move</span></div>
+          <div><kbd>A</kbd> or <kbd>X</kbd> <span>Attack</span></div>
+          <div><kbd>B</kbd> or <kbd>O</kbd> <span>Jump</span></div>
+          <div><kbd>Y</kbd> or <kbd>△</kbd> <span>Special Ability</span></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
