@@ -4,7 +4,7 @@ export interface Vector3D {
   z: number; // Height above the floor (jumping)
 }
 
-export type CharacterType = 'developer' | 'product_manager' | 'designer' | 'manager' | 'zoom_zombie' | 'boss';
+export type CharacterType = 'consultant' | 'deployment_engineer' | 'support' | 'manager' | 'zoom_zombie' | 'boss';
 
 export type CharacterState = 
   | 'idle' 

@@ -85,7 +85,7 @@ export class HUD {
     ctx.fillStyle = player.color;
     ctx.font = '16px "Press Start 2P"';
     ctx.textAlign = 'center';
-    ctx.fillText(player.classType === 'developer' ? '👨‍💻' : player.classType === 'product_manager' ? '👩‍💼' : '🎨', paddingX + barWidth + 35, hpY + 28);
+    ctx.fillText(player.classType === 'consultant' ? '💼' : player.classType === 'deployment_engineer' ? '⚙️' : '🎧', paddingX + barWidth + 35, hpY + 28);
 
 
     // 2. TOP-CENTER: Wave and Enemies Display

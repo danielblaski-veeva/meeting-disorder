@@ -14,7 +14,7 @@ export class Game {
   uiOverlay: HTMLDivElement;
 
   gameState: 'menu' | 'character_select' | 'playing' | 'gameover' | 'victory' = 'menu';
-  selectedClass: 'developer' | 'product_manager' | 'designer' = 'developer';
+  selectedClass: 'consultant' | 'deployment_engineer' | 'support' = 'consultant';
 
   player: Player | null = null;
   enemies: Enemy[] = [];
@@ -467,37 +467,52 @@ export class Game {
     this.gameState = 'character_select';
 
     this.uiOverlay.innerHTML = `
-      <div class="menu-panel" style="max-width: 700px;">
+      <div class="menu-panel" style="max-width: 800px;">
         <h1 class="menu-title">SELECT CORPORATE FIGHTER</h1>
         <div class="character-select-grid">
-          <!-- Developer -->
-          <div class="char-card selected" data-class="developer">
-            <div class="char-avatar-container">💻</div>
-            <div class="char-name">THE DEVELOPER</div>
+          <!-- Consultant -->
+          <div class="char-card selected" data-class="consultant">
+            <div class="char-avatar-container" style="font-size: 2.5rem; margin-bottom: 0.8rem;">💼</div>
+            <div class="char-name">THE CONSULTANT</div>
             <div class="char-stats">
-              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div></div>
-              <div class="stat-bar-container"><span class="stat-label">ATK</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85%;"></div></div></div>
-              <div class="stat-bar-container"><span class="stat-label">SPD</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70%;"></div></div></div>
-            </div>
-          </div>
-          <!-- Product Manager -->
-          <div class="char-card" data-class="product_manager">
-            <div class="char-avatar-container">📣</div>
-            <div class="char-name">THE PM</div>
-            <div class="char-stats">
-              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 70%;"></div></div></div>
+              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 65%;"></div></div></div>
               <div class="stat-bar-container"><span class="stat-label">ATK</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 75%;"></div></div></div>
               <div class="stat-bar-container"><span class="stat-label">SPD</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div></div>
             </div>
+            <div class="char-desc" style="font-size: 10px; color: #94a3b8; margin-top: 10px; line-height: 1.4; text-align: left;">
+              <strong>Archetype:</strong> Agile / Ranged<br/>
+              <strong>Weapon:</strong> Laser Pointer & Slides<br/>
+              <em>Fast & Evasive.</em> Can dash rapidly in and out of close combat, peppering foes with buzzwords.
+            </div>
           </div>
-          <!-- Designer -->
-          <div class="char-card" data-class="designer">
-            <div class="char-avatar-container">🎨</div>
-            <div class="char-name">THE DESIGNER</div>
+          <!-- Deployment Engineer -->
+          <div class="char-card" data-class="deployment_engineer">
+            <div class="char-avatar-container" style="font-size: 2.5rem; margin-bottom: 0.8rem;">⚙️</div>
+            <div class="char-name">DEPLOYMENT ENG</div>
             <div class="char-stats">
-              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85%;"></div></div></div>
+              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div></div>
               <div class="stat-bar-container"><span class="stat-label">ATK</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div></div>
-              <div class="stat-bar-container"><span class="stat-label">SPD</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80%;"></div></div></div>
+              <div class="stat-bar-container"><span class="stat-label">SPD</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 50%;"></div></div></div>
+            </div>
+            <div class="char-desc" style="font-size: 10px; color: #94a3b8; margin-top: 10px; line-height: 1.4; text-align: left;">
+              <strong>Archetype:</strong> Heavy / Bruiser<br/>
+              <strong>Weapon:</strong> CAT6 Whip & Server Blade<br/>
+              <em>Slow & Heavy.</em> High HP, slow movement. Wide sweeps that hit groups of enemies. Excellent CC.
+            </div>
+          </div>
+          <!-- Support -->
+          <div class="char-card" data-class="support">
+            <div class="char-avatar-container" style="font-size: 2.5rem; margin-bottom: 0.8rem;">📞</div>
+            <div class="char-name">THE SUPPORT</div>
+            <div class="char-stats">
+              <div class="stat-bar-container"><span class="stat-label">HP</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80%;"></div></div></div>
+              <div class="stat-bar-container"><span class="stat-label">ATK</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80%;"></div></div></div>
+              <div class="stat-bar-container"><span class="stat-label">SPD</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 75%;"></div></div></div>
+            </div>
+            <div class="char-desc" style="font-size: 10px; color: #94a3b8; margin-top: 10px; line-height: 1.4; text-align: left;">
+              <strong>Archetype:</strong> Brawler / Tank<br/>
+              <strong>Weapon:</strong> Ringing Desk Phones<br/>
+              <em>Balanced.</em> Frontline brawler who takes customer anger. Excellent close-quarters ringing combos.
             </div>
           </div>
         </div>
@@ -511,7 +526,7 @@ export class Game {
       card.addEventListener('click', () => {
         cards.forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
-        this.selectedClass = card.getAttribute('data-class') as 'developer' | 'product_manager' | 'designer';
+        this.selectedClass = card.getAttribute('data-class') as 'consultant' | 'deployment_engineer' | 'support';
         sound.playSlash();
       });
     });
